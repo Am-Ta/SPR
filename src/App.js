@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.scss";
+import "./scss/App.scss";
+
 function App() {
     const appComp = (
         <div className="app">
