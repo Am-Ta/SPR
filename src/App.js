@@ -1,10 +1,12 @@
 import React from "react";
+import Form from "./components/Form";
+
 import "./scss/App.scss";
 
 function App() {
     const appComp = (
-        <div className="app">
-            <h1>Hello World</h1>
+        <div className="app container">
+            <Form />
         </div>
     );
 
