@@ -43,6 +43,9 @@ class Form extends Component {
                     handleChange={this.handleChange}
                 />
                 <Button />
+                <p className="createAccForm__text">
+                    Already have an account? <a href="#">Login</a>
+                </p>
             </form>
         );
 

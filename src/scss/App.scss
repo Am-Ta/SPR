@@ -1,1 +1,84 @@
 @import './reset';
+
+body {
+    font-family: 'ubuntu';
+}
+
+input, button {
+    font-family: inherit;
+    outline: none;
+}
+
+// default box-sizing all emlements is border-box
+html{
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+// Clear fix
+.clearfix:before,
+.clearfix:after {
+    content: '';
+    display: table;
+}
+.clearfix:after {clear: both}
+
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createAccForm {
+    padding: 1em;
+    color: rgb(68, 68, 68);
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .createAccForm__item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+        .createAccForm__label {
+            padding: 4px;
+        }
+        .createAccForm__info {
+            padding: 1.25em .5em;
+            border: none;
+            border: 1px solid rgba(230,230,230, 1);
+        }
+    }
+
+    .createAccForm__item:nth-child(1),
+    .createAccForm__item:nth-child(2) {flex-basis: 48%;}
+    .createAccForm__item:nth-child(3),
+    .createAccForm__item:nth-child(4) {flex-basis: 100%;}
+    .createAccForm__text {
+        width: 100%;
+        font-size: .75em;
+        text-align:center;
+        color: rgba(180,180,180, 1);
+        padding: 8px 4px;
+        a {color: rgba(100, 100, 100, 1);}
+    }
+}
+
+.btn {
+    border:none;
+    padding: 1em .5em;
+    font-size: 1em;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(230,230,230, 1);
+    cursor: pointer;
+    margin-top: 1em;
+    &:hover {background-color: rgba(230,230,230, .3)}
+}
