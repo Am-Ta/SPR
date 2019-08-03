@@ -1,0 +1,7 @@
+{
+  "name": "form-validation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Amin Taghipour <amin.taghipour27@gmail.com>",
+  "license": "MIT"
+}
