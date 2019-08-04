@@ -3,6 +3,11 @@ import Form from "./components/Form";
 
 import "./scss/App.scss";
 
+/**
+ * App component puts in the root element in index.html
+ *
+ * @returns
+ */
 function App() {
     const appComp = (
         <div className="app container">
