@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 /**
- * Input component
+ *Input component
  *
  * @class Input
  * @extends {Component}
@@ -17,7 +18,7 @@ class Input extends Component {
     }
 
     /**
-     * extract the suitable class
+     *extract the suitable class
      *
      * @returns
      * @memberof Input
@@ -26,7 +27,9 @@ class Input extends Component {
         let classNameInput = "createAccForm__info";
         let classNameErrText = "createAccForm__errText";
 
-        const { errValue } = this.props;
+        const { name } = this.props;
+        const errValue = this.props.errValue[name];
+
         const errValueLen = errValue === null ? null : errValue.length;
 
         switch (true) {
@@ -45,13 +48,14 @@ class Input extends Component {
     };
 
     /**
-     * render the form component
+     *renders the input component
      *
      * @returns
      * @memberof Input
      */
     render() {
-        const { label, type, name, value, errValue } = this.props;
+        const { label, type, name, value } = this.props;
+        const errValue = this.props.errValue[name];
 
         const inputComp = (
             <div className="createAccForm__item">
@@ -72,5 +76,14 @@ class Input extends Component {
         return inputComp;
     }
 }
+
+Input.propTypes = {
+    label: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
+    errValue: PropTypes.object.isRequired
+};
 
 export default Input;
