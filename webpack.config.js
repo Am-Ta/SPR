@@ -6,8 +6,8 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "bundle.js",
-        publicPath: "/"
+        filename: "bundle.js"
+        // publicPath: "/"
     },
     devServer: {
         hot: true,
@@ -23,6 +23,17 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ["style-loader", "css-loader", "sass-loader"]
+            },
+            {
+                test: /\.(jpg|jpeg|png|svg|gif)$/,
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
             }
         ]
     },
