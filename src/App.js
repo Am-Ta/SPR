@@ -1,5 +1,7 @@
 import React from "react";
-import Form from "./components/Form";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Signup from "./components/Signup";
+import Signin from "./components/Signin";
 
 import "./scss/App.scss";
 
@@ -10,9 +12,14 @@ import "./scss/App.scss";
  */
 function App() {
     const appComp = (
-        <div className="app container">
-            <Form />
-        </div>
+        <Router>
+            <div className="app">
+                <div className="container">
+                    <Route path="/signup" component={Signup} />
+                    <Route path="/signin" component={Signin} />
+                </div>
+            </div>
+        </Router>
     );
 
     return appComp;

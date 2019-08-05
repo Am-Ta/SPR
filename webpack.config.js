@@ -6,10 +6,12 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: "/"
     },
     devServer: {
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     module: {
         rules: [
