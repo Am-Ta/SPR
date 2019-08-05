@@ -141,7 +141,7 @@ class Signup extends Component {
      */
     extClass = name => {
         let input = "form__info";
-        let errText = "alert alert_hidden";
+        let alert = "alert alert_hidden";
 
         const { formErrs } = this.state;
         const errValue = formErrs[name];
@@ -156,11 +156,11 @@ class Signup extends Component {
                 break;
             case errValueLen > 0:
                 input += " form__info_error";
-                errText += " alert_show";
+                alert += " alert_show";
                 break;
         }
 
-        return { input, errText };
+        return { input, alert };
     };
 
     /**
@@ -184,7 +184,7 @@ class Signup extends Component {
                         value={fname}
                         onChange={this.handleChange}
                     />
-                    <p className={this.extClass("fname").errText}>
+                    <p className={this.extClass("fname").alert}>
                         {formErrs.fname}
                     </p>
                 </div>
@@ -198,7 +198,7 @@ class Signup extends Component {
                         value={lname}
                         onChange={this.handleChange}
                     />
-                    <p className={this.extClass("lname").errText}>
+                    <p className={this.extClass("lname").alert}>
                         {formErrs.lname}
                     </p>
                 </div>
@@ -212,7 +212,7 @@ class Signup extends Component {
                         value={email}
                         onChange={this.handleChange}
                     />
-                    <p className={this.extClass("email").errText}>
+                    <p className={this.extClass("email").alert}>
                         {formErrs.email}
                     </p>
                 </div>
@@ -226,7 +226,7 @@ class Signup extends Component {
                         value={password}
                         onChange={this.handleChange}
                     />
-                    <p className={this.extClass("password").errText}>
+                    <p className={this.extClass("password").alert}>
                         {formErrs.password}
                     </p>
                 </div>
