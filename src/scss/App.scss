@@ -36,47 +36,35 @@ html{
     align-items: center;
 }
 
-.createAccForm {
+.form {
     padding: 1em;
     color: rgb(68, 68, 68);
     width: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .createAccForm__item {
+    .form__item {
         display: flex;
         flex-direction: column;
         margin-bottom: 1em;
         flex-basis: 100%;
-        .createAccForm__label {
+        .form__label {
             padding: 4px;
         }
-        .createAccForm__info {
+        .form__info {
             padding: 1.25em .5em;
             border: none;
             border: 1px solid rgba(230,230,230, 1);
             width: 100%;
-            &.error {
-                border-color: rgba(230, 0, 0, 1);
-            }
-            &.success{
-                border-color: rgba(0, 230, 0, 1);
-            }
         }
-        .createAccForm__errText {
-            color: rgba(230, 0, 0, 1);
-            background-color: rgba(230, 0, 0, .2);
-            font-size: .7em;
-            padding: 2px;
-            margin-top: 4px;
-            line-height: 1.2;
-            display: none;
-            &.createAccForm__errText_show {
-                display: block;
-            }
+        .form__info_success {
+            border-color: rgba(0, 230, 0, 1);
+        }
+        .form__info_error {
+            border-color: rgba(230, 0, 0, 1);   
         }
     }
-    .createAccForm__text {
+    .form__text {
         width: 100%;
         font-size: .75em;
         text-align:center;
@@ -84,6 +72,21 @@ html{
         padding: 8px 4px;
         a {color: rgba(100, 100, 100, 1);}
     }
+}
+
+.alert {
+    color: rgba(230, 0, 0, 1);
+    background-color: rgba(230, 0, 0, .2);
+    font-size: .7em;
+    padding: 2px;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+.alert_hidden {
+    display: none;
+}
+.alert_show {
+    display: block;
 }
 
 .btn {
@@ -99,10 +102,7 @@ html{
 }
 
 @media screen and (min-width: 400px) {
-    .createAccForm{
-        .createAccForm__item:nth-child(1),
-        .createAccForm__item:nth-child(2) {
-            flex-basis: 48%;
-        }
+    .half {
+        flex-basis: 48% !important;
     }
 }
