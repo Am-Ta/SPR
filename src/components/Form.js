@@ -3,7 +3,7 @@ import Input from "./Input";
 import Button from "./Button";
 
 /**
- * Form component
+ *Form component
  *
  * @class Form
  * @extends {Component}
@@ -31,7 +31,7 @@ class Form extends Component {
     }
 
     /**
-     * Evaluate the value and then changes the formErrs in state
+     *Evaluates the value and then changes the formErrs in state
      *
      * @param {string} name (event.target.name)
      * @param {string} value (event.target.value)
@@ -66,7 +66,7 @@ class Form extends Component {
     };
 
     /**
-     * handles the changes in input component
+     *handles the changes in input component
      *
      * @param {object} event (event object for input element)
      * @memberof Form
@@ -79,7 +79,7 @@ class Form extends Component {
     };
 
     /**
-     * handle the submit in form
+     *handles the submit in form
      *
      * @param {object} event (event object for form element)
      * @memberof Form
@@ -97,13 +97,25 @@ class Form extends Component {
                 Email     : ${this.state.email}
                 Password  : ${this.state.password}
             `);
+            this.setState({
+                fname: "",
+                lname: "",
+                email: "",
+                password: "",
+                formErrs: {
+                    fname: null,
+                    lname: null,
+                    email: null,
+                    password: null
+                }
+            });
         } else {
-            console.error("DISPLAY ERROR - SOMETHING ERROR");
+            console.error("DISPLAY ERROR - FIELDS ARE NULL");
         }
     };
 
     /**
-     * evaluate the value to must be submitted
+     *evaluate the value to must be submitted
      *
      * @param {object} formErrs (formErrs in state)
      * @returns
@@ -122,12 +134,14 @@ class Form extends Component {
     };
 
     /**
-     * render the form component
+     *renders the form component
      *
      * @returns
      * @memberof Form
      */
     render() {
+        const { fname, lname, email, password, formErrs } = this.state;
+
         const formComp = (
             <form
                 className="createAccForm"
@@ -139,32 +153,32 @@ class Form extends Component {
                     type="text"
                     name="fname"
                     handleChange={this.handleChange}
-                    value={this.state.fname}
-                    errValue={this.state.formErrs.fname}
+                    value={fname}
+                    errValue={formErrs}
                 />
                 <Input
                     label="Last Name"
                     type="text"
                     name="lname"
                     handleChange={this.handleChange}
-                    value={this.state.lname}
-                    errValue={this.state.formErrs.lname}
+                    value={lname}
+                    errValue={formErrs}
                 />
                 <Input
                     label="Email"
                     type="email"
                     name="email"
                     handleChange={this.handleChange}
-                    value={this.state.email}
-                    errValue={this.state.formErrs.email}
+                    value={email}
+                    errValue={formErrs}
                 />
                 <Input
                     label="Password"
                     type="password"
                     name="password"
                     handleChange={this.handleChange}
-                    value={this.state.password}
-                    errValue={this.state.formErrs.password}
+                    value={password}
+                    errValue={formErrs}
                 />
                 <Button />
                 <p className="createAccForm__text">
