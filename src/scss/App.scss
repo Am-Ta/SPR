@@ -101,6 +101,40 @@ html{
     &:hover {background-color: rgba(230,230,230, .3)}
 }
 
+.banner {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url('../img/banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .7);
+        top: 0;
+        left: 0;
+    }
+}
+
+nav {
+    position: relative;
+    z-index: 2;
+    .nav {
+        display: flex;
+        .nav__item {
+            margin: 1em .5em;
+            .nav__link {
+                color: #fff;
+                // text-decoration: none;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
 @media screen and (min-width: 400px) {
     .half {
         flex-basis: 48% !important;
