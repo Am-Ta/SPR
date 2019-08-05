@@ -78,7 +78,7 @@ class Signup extends Component {
     };
 
     /**
-     *handles the submit in  form element
+     *handles the submit in  form element and then reset the state to default values
      *
      * @param {object} event (event object for form element)
      * @memberof Signup
@@ -123,7 +123,7 @@ class Signup extends Component {
     validationToSubmit = formErrs => {
         let result = true;
 
-        Object.values(formErrs).map(value => {
+        Object.values(formErrs).forEach(value => {
             if (value == null || value !== "") {
                 result = false;
             }
